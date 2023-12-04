@@ -50,7 +50,8 @@ client.on("interactionCreate", (interaction) => {
         const embed = new EmbedBuilder()
         .setTitle("Developer Links")
         .setDescription('https://linktr.ee/FishyDev')
-        .setImage('https://cdn.discordapp.com/attachments/1146283420050272357/1181055487417004052/elite-amaranth.gif?ex=657faaa3&is=656d35a3&hm=38baf7930d6c1e5ed2048acbf728d428012e0fb9bf40d2c891c55cc37bafec17&')
+        .setImage('https://cdn.discordapp.com/attachments/1146283420050272357/1181058713025519667/banner-software-ui-and-development-for-different-vector-37731495.jpg?ex=657fada4&is=656d38a4&hm=12ccae29085e2097f3f7e50e79d098723414c1795d179457d9ea51667c4b552f&')
+        .setThumbnail("https://cdn.discordapp.com/attachments/1146283420050272357/1181055487417004052/elite-amaranth.gif?ex=657faaa3&is=656d35a3&hm=38baf7930d6c1e5ed2048acbf728d428012e0fb9bf40d2c891c55cc37bafec17&")
         .setColor('Random')
         .addFields({ 
             name: 'Developer of this bot,',
