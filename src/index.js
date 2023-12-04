@@ -1,5 +1,5 @@
 require('dotenv').config();// Use this to protect you're key 
-const { Client, IntentsBitField, Presence, ActivityType } = require('discord.js');
+const { Client, IntentsBitField, Presence, ActivityType, EmbedBuilder } = require('discord.js');
 
 const client = new Client({
     intents: [
@@ -38,12 +38,27 @@ client.on('ready', (c) => { //Logs in the console if you're bot is online or not
 client.on("interactionCreate", (interaction) => {
     if (!interaction.isChatInputCommand()) return;
 
-    if (interaction.commandName === 'hey') {
+    if (interaction.commandName === 'hey') { //hey command
         interaction.reply('hey there!!')
     }
 
-    if (interaction.commandName === 'ping') {
+    if (interaction.commandName === 'ping') {// ping command
         interaction.reply('Pong!')
+    }
+
+    if (interaction.commandName === 'developer') {
+        const embed = new EmbedBuilder()
+        .setTitle("Developer Links")
+        .setDescription('https://linktr.ee/FishyDev')
+        .setImage('https://cdn.discordapp.com/attachments/1146283420050272357/1181055487417004052/elite-amaranth.gif?ex=657faaa3&is=656d35a3&hm=38baf7930d6c1e5ed2048acbf728d428012e0fb9bf40d2c891c55cc37bafec17&')
+        .setColor('Random')
+        .addFields({ 
+            name: 'Developer of this bot,',
+            value: '@Fishy',
+            inline: true,
+
+        });
+        interaction.reply({ embeds: [embed] });
     }
 });
 
