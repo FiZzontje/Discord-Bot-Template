@@ -8,13 +8,13 @@ const client = new Client({
         //IntentsBitField.Flags.GuildMessages,
         //IntentsBitField.Flags.MessageContent, 
     ],
-});// you can add mode is you want!
+});// you can add more is you want!
 
 client.on('ready', (c) => { //Logs in the console if you're bot is online or not // if this fail you will get errors! 
     console.log(`✅ ${c.user.tag} is online`);
 
     client.user.setActivity({
-        name: "Dev mode by fisy",
+        name: "🌐 Dev mode by#️⃣fisy",
         type: ActivityType.Watching,
 
     })
@@ -34,5 +34,18 @@ client.on('ready', (c) => { //Logs in the console if you're bot is online or not
         message.reply('Hi there!');
     }
 });// this code is buggy bot reply's 3 times on the same massage (Try to fix this soon!) */
+
+client.on("interactionCreate", (interaction) => {
+    if (!interaction.isChatInputCommand()) return;
+
+    if (interaction.commandName === 'hey') {
+        interaction.reply('hey there!!')
+    }
+
+    if (interaction.commandName === 'ping') {
+        interaction.reply('Pong!')
+    }
+});
+
 
 client.login(process.env.TOKEN);
